@@ -11,11 +11,19 @@ jobs:
     steps:
       - name: Checkout code # 플젝코드 소스코드 내려받기
         uses: actions/checkout@v3
+        
       - name: Setup pnpm
         uses: pnpm/action-setup@v3
         with:
           version: latest
           run_install: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+
       - name: pnpm 디렉터리 확인
         id: pnpm-directory
         shell: bash
@@ -24,13 +32,14 @@ jobs:
 
       - uses: actions/cache@v4
         name: pnpm 캐시 가져오기
+        id: pnpm-cache
         with:
-          path: ${{ steps.pnpm-directory.outputs.STORE_PATH}}
+          path: ${{ steps.pnpm-directory.outputs.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
 
       - name: Install dependencies # 의존성 설치
         run: pnpm install --frozen-lockfile
-        
+
       - name: Build # 빌드
         run: pnpm turbo build
 
