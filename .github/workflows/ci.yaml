@@ -14,10 +14,23 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 8.6.12
-      - name: Install dependencies # 종속성 설치
-        run: pnpm install
+          version: latest
+          run_install: false
+      - name: pnpm 디렉터리 확인
+        id: pnpm-directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
+      - uses: actions/cache@v4
+        name: pnpm 캐시 가져오기
+        with:
+          path: ${{ steps.pnpm-directory.outputs.STORE_PATH}}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+      - name: Install dependencies # 의존성 설치
+        run: pnpm install --frozen-lockfile
+        
       - name: Build # 빌드
         run: pnpm turbo build
 
