@@ -107,7 +107,7 @@
   html,
   body,
   #__next {
-    @apply h-dvh text-[16px];
+    @apply font-pretendard h-dvh text-[16px];
   }
 
   * {
