@@ -13,9 +13,9 @@ const ButtonStyle = cva(
   {
     variants: {
       size: {
-        small: "p-2 text-sm",
-        medium: "p-3 text-base",
-        large: "p-4 text-lg",
+        small: "rounded-lg p-2 text-sm",
+        medium: "rounded-lg p-3 text-base",
+        large: "rounded-lg p-4 text-lg",
       },
       theme: {
         primary: "bg-blue-500 text-white",
@@ -42,7 +42,7 @@ const WithOnlyStyle = forwardRef<any, ButtonProps>((props, forwardedRef) => {
   return (
     <div
       className={cn(
-        "inline-flex items-center",
+        "inline-flex items-center justify-center",
         ButtonStyle({
           size,
           theme,
@@ -57,7 +57,7 @@ const WithOnlyStyle = forwardRef<any, ButtonProps>((props, forwardedRef) => {
 WithOnlyStyle.displayName = "WithOnlyStyle";
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ size = "medium", theme = "primary", onlyStyle = false, loading = false, ...props }, ref) => {
+  ({ size = "medium", theme = "primary", onlyStyle = false, loading = false, className, ...props }, ref) => {
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
       if (loading) {
         e.preventDefault();
@@ -74,11 +74,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         className={cn(
-          "inline-flex flex-1 items-center",
+          "inline-flex flex-1 items-center justify-center",
           ButtonStyle({
             size,
             theme,
-          })
+          }),
+          className
         )}
         onClick={e => handleClick(e)}
         ref={ref}

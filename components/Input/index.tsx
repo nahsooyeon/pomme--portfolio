@@ -1,6 +1,6 @@
 "use client";
 
-import { InputHTMLAttributes, forwardRef, useState } from "react";
+import React, { InputHTMLAttributes } from "react";
 import { IoEyeOff } from "react-icons/io5";
 import { IoEye } from "react-icons/io5";
 
@@ -8,22 +8,24 @@ import { cn } from "@/utils/tailwind";
 
 import { VariantProps, cva } from "class-variance-authority";
 
-const InputStyle = cva(`group relative flex flex-1 items-center justify-between gap-2 rounded-sm px-3`, {
+const InputVariants = cva(`group relative flex flex-1 items-center justify-between gap-2 rounded-[6px]`, {
   variants: {
     size: {
-      xs: "h-7 py-[7px]",
-      sm: "h-8 py-[7px]",
-      md: "h-9 py-[7px]",
-      lg: "h-10 py-[9px]",
+      xs2: "h-7 text-[13px] leading-[130%] tracking-normal placeholder:text-[13px]",
+      xs: "h-8",
+      sm: "h-9",
+      md: "h-10",
+      lg: "h-11",
     },
   },
   defaultVariants: {
     size: "md",
   },
 });
+
 interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "prefix" | "size">,
-    VariantProps<typeof InputStyle> {
+    VariantProps<typeof InputVariants> {
   label?: React.ReactNode;
   hint?: React.ReactNode;
   prefix?: React.ReactNode;
@@ -34,7 +36,7 @@ interface InputProps
   isOnlyNumber?: boolean;
 }
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
     {
       type,
@@ -52,7 +54,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     },
     ref
   ) => {
-    const [isShow, setShow] = useState<boolean>(false);
+    const [isShow, setShow] = React.useState<boolean>(false);
 
     const handleToggleShow = () => setShow(prev => !prev);
     const handleOnlyNumber = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -66,24 +68,24 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           {label && (
             <div
               className={cn(
-                "flex h-5 w-25 shrink-0 items-center text-sm",
-                layout === "vertical" && "ml-0.5",
-                props.disabled && ""
+                "flex h-[18px] w-25 shrink-0 items-center text-[14px]",
+                layout === "vertical" && "ml-[2px]",
+                props.disabled && "text-gray-900"
               )}>
               {label}
             </div>
           )}
-          <div className={cn(InputStyle({ size }), "z-0 px-3", props.readOnly && "px-0.5", className)}>
+          <div className={cn(InputVariants({ size }), "z-0 px-3", props.readOnly && "px-[2px]", className)}>
             {prefix && (
-              <div className={cn(props.disabled && "fill-gray-300 stroke-gray-300 text-gray-300")}>{prefix}</div>
+              <div className={cn(props.disabled && "fill-gray-600 stroke-gray-600 text-gray-600")}>{prefix}</div>
             )}
             <input
               ref={ref}
               type={isShow ? "text" : type}
               data-error={isError}
               className={cn(
-                InputStyle({ size }),
-                "peer w-full appearance-none bg-transparent text-sm placeholder:text-gray-800 disabled:text-gray-600"
+                InputVariants({ size }),
+                "peer w-full appearance-none bg-transparent text-[14px] placeholder:text-gray-900 disabled:text-gray-600"
               )}
               onInput={handleOnlyNumber}
               {...props}
@@ -97,11 +99,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             {type === "password" && (
               <button tabIndex={-1} type="button" onClick={handleToggleShow}>
                 {isShow ? (
-                  <div className="fill-gray-400 stroke-gray-400 stroke-0">
+                  <div className="fill-gray-300 stroke-gray-300 stroke-0">
                     <IoEye />
                   </div>
                 ) : (
-                  <div className="fill-gray-400 stroke-gray-400 stroke-0">
+                  <div className="fill-gray-300 stroke-gray-300 stroke-0">
                     <IoEyeOff />
                   </div>
                 )}
@@ -110,9 +112,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
             <div
               className={cn(
-                InputStyle({ size }),
+                InputVariants({ size }),
                 "absolute inset-0 -z-10 rounded-[6px] border border-gray-500 bg-white",
-                "group-hover:border-gray-600 group-hover:bg-gray-200 peer-focus:bg-white", // Default
+                "gorup-hover:border-gray-600 group-hover:bg-gray-200 peer-focus:bg-white", // Default
                 "peer-read-only:border-none peer-read-only:bg-transparent", // Read Only
                 "group-hover:peer-data-[error=false]:border-gray-600", // No Error
                 "peer-data-[error=true]:border-red-500 group-hover:peer-data-[error=true]:border-red-500 group-hover:peer-data-[error=true]:bg-red-100", // Error
@@ -126,8 +128,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         {isHint && (
           <div
             className={cn(
-              "h-4 text-xs text-gray-200",
-              layout === "vertical" ? "ml-0.5" : "ml-28",
+              "h-4 text-[12px] text-gray-200",
+              layout === "vertical" ? "ml-[2px]" : "ml-[114px]",
               isError ? "text-red-600" : ""
             )}>
             {hint}
