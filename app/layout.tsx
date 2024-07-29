@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
 
+import NavBar from "@/components/NavBar";
+
 import "./globals.css";
 
 const defaultUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000";
@@ -21,7 +23,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={pretendard.className}>
       <body className="bg-background text-foreground">
-        <main className="flex min-h-screen flex-col items-center">{children}</main>
+        <NavBar />
+        <main className="flex min-h-screen flex-col items-center max-sm:px-4 sm:px-20">{children}</main>
       </body>
     </html>
   );

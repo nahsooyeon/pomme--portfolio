@@ -5,12 +5,11 @@ const SpacingObject = Object.fromEntries(Array.from({ length: 328 }, (_, i) => [
 const config: Config = {
   content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
+    spacing: SpacingObject,
     extend: {
       fontFamily: {
         pretendard: ["var(--font-pretendard)"],
       },
-      spacing: SpacingObject,
-
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
