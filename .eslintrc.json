@@ -1,3 +1,12 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:tailwindcss/recommended", "plugin:storybook/recommended"]
+  "extends": ["next/core-web-vitals", "plugin:tailwindcss/recommended", "plugin:storybook/recommended"],
+  "settings": {
+    "tailwindcss": {
+      "callees": ["cn", "classnames", "clsx", "ctl", "cva"],
+      "classRegex": "^(class(Name)?|\\w+Style)$",
+      "config": "tailwind.config.ts",
+      "cssFiles": "./app/**/*.css"
+    }
+  },
+  "ignorePatterns": ["next.config.mjs", "tailwind.config.ts", "postcss.config.js", "next-env.d.ts"]
 }

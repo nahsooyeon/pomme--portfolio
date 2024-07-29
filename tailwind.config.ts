@@ -1,9 +1,9 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+import type { Config } from "tailwindcss";
+
+const SpacingObject = Object.fromEntries(Array.from({ length: 328 }, (_, i) => [`${i}`, `${i * 4}px`]));
+
+const config: Config = {
+  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       colors: {
@@ -15,6 +15,9 @@ module.exports = {
         },
       },
     },
+    spacing: SpacingObject,
   },
   plugins: [],
 };
+
+export default config;
