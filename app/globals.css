@@ -107,7 +107,7 @@
   html,
   body,
   #__next {
-    @apply h-dvh text-[16px];
+    @apply h-dvh font-pretendard text-base;
   }
 
   * {
@@ -115,7 +115,7 @@
   }
 
   .max-width {
-    @apply mx-auto w-[1280px] px-[30px];
+    @apply mx-auto w-320 px-[30px];
   }
 
   b {
