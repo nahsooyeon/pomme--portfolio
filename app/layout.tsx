@@ -12,8 +12,9 @@ const pretendard = localFont({
 });
 export const metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Next.js and Supabase Starter Kit",
+  title: "🍎devPomme's Portfolio",
   description: "The fastest way to build apps with Next.js and Supabase",
+  visualViewport: "width=device-width, initial-scale=1, maximum-scale=5, user-scalable=0",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
