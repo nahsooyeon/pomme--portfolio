@@ -9,6 +9,8 @@ const config: Config = {
       fontFamily: {
         pretendard: ["var(--font-pretendard)"],
       },
+      spacing: SpacingObject,
+
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -18,7 +20,6 @@ const config: Config = {
         },
       },
     },
-    spacing: SpacingObject,
   },
   plugins: [],
 };
