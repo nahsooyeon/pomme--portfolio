@@ -113,10 +113,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             <div
               className={cn(
                 InputVariants({ size }),
-                "absolute inset-0 -z-10 rounded-[6px] border border-gray-500 bg-white",
-                "gorup-hover:border-gray-600 group-hover:bg-gray-200 peer-focus:bg-white", // Default
+                "absolute inset-0 -z-10 rounded-[6px] border border-pink-500 bg-white",
+                "group-hover:border-pink-600 group-hover:bg-gray-200 peer-focus:bg-white", // Default
                 "peer-read-only:border-none peer-read-only:bg-transparent", // Read Only
-                "group-hover:peer-data-[error=false]:border-gray-600", // No Error
+                "group-hover:peer-data-[error=false]:border-pink-600", // No Error
                 "peer-data-[error=true]:border-red-500 group-hover:peer-data-[error=true]:border-red-500 group-hover:peer-data-[error=true]:bg-red-100", // Error
                 "group-hover:peer-focus:peer-data-[error=false]:border-blue-700", // Focus Input border blue
                 "peer-disabled:border-gray-400 peer-disabled:bg-gray-200 peer-disabled:text-gray-600 peer-disabled:group-hover:peer-data-[error=true]:bg-gray-200"

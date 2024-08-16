@@ -13,14 +13,14 @@ const ButtonStyle = cva(
   {
     variants: {
       size: {
-        small: "rounded-lg p-2 text-sm",
-        medium: "rounded-lg p-3 text-base",
-        large: "rounded-lg p-4 text-lg",
+        small: "rounded-lg max-sm:p-1 max-sm:text-xs sm:p-2 sm:text-sm ",
+        medium: "rounded-lg max-sm:p-2 max-sm:text-sm sm:p-2.5 sm:text-base",
+        large: "rounded-lg max-sm:p-2.5 max-sm:text-base sm:p-3 sm:text-lg",
       },
       theme: {
-        primary: "bg-blue-500 text-white",
-        secondary: "bg-gray-500 text-white",
-        tertiary: "bg-gray-200 text-gray-800",
+        primary: "bg-pink-300 text-white hover:bg-pink-500",
+        secondary: "bg-pink-500 text-white ",
+        tertiary: "bg-pink-200 text-pink-800",
       },
     },
     defaultVariants: {
@@ -42,7 +42,7 @@ const WithOnlyStyle = forwardRef<any, ButtonProps>((props, forwardedRef) => {
   return (
     <div
       className={cn(
-        "inline-flex items-center justify-center",
+        "inline-flex flex-nowrap items-center justify-center",
         ButtonStyle({
           size,
           theme,
@@ -74,7 +74,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         className={cn(
-          "inline-flex flex-1 items-center justify-center",
+          "inline-flex w-max flex-1 flex-nowrap items-center justify-center",
           ButtonStyle({
             size,
             theme,

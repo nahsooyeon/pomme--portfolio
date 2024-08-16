@@ -1,23 +1,16 @@
 "use client";
 
-import { FunctionComponent, useState, useTransition } from "react";
+import { FunctionComponent, useState } from "react";
 import { HiMiniLanguage } from "react-icons/hi2";
 import { IoClose } from "react-icons/io5";
 import { LuMenu } from "react-icons/lu";
 
-import { useLocale } from "next-intl";
 import Link from "next/link";
-import { useParams, useSearchParams } from "next/navigation";
 
 import { cn } from "@/utils/tailwind";
 
-import { usePathname, useRouter } from "@/i18n";
-
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
-
 import Button from "./Button";
-
-const locales = ["ko", "en", "de"];
+import LangSwitcher from "./LangSwitcher";
 
 interface NavBarProps {
   locale: string;
@@ -25,84 +18,47 @@ interface NavBarProps {
 
 const NavBar: FunctionComponent<NavBarProps> = props => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const router = useRouter();
-  const locale = useLocale();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const [isPending, startTransition] = useTransition();
 
   const onClickMenuHandler = () => {
     setIsMenuOpen(prev => !prev);
   };
-  const changeLanguage = (newLocale: "ko" | "de" | "en") => {
-    const nextLocale = newLocale;
-    const params: { [anyProp: string]: string } = {};
-    searchParams.forEach((value, key) => {
-      params[key] = value;
-    });
-
-    console.log(pathname, params, searchParams);
-
-    startTransition(() => {
-      router.replace(pathname, {
-        locale: nextLocale,
-      });
-    });
-  };
 
   return (
-    <nav className="flex h-16 w-full flex-1 justify-center border-b border-b-foreground/10 max-sm:px-4 sm:px-20">
+    <nav className="z-10 flex h-16 w-full flex-1 justify-center border-b border-b-pink-300 bg-white max-sm:fixed max-sm:px-4 sm:px-20">
       <div className="relative flex w-full flex-1 items-center text-sm">
         <h1>
-          <Link href="/">&#60;devPomme /&#62;</Link>
+          <Link href="/" className={"text-nowrap text-2xl font-extrabold text-pink-600 max-md:text-lg"}>
+            &#60;devPomme🍎 /&#62;
+          </Link>
         </h1>
         <ul
+          // eslint-disable-next-line tailwindcss/migration-from-tailwind-2
           className={cn(
-            "relative flex items-center gap-4 bg-white max-sm:flex-col max-sm:gap-4 sm:flex-row",
+            "relative flex items-center gap-4 bg-white max-md:flex-col max-md:gap-4 md:ml-auto md:flex-row",
             isMenuOpen
-              ? "absolute top-16 z-10 gap-4 p-4 max-sm:left-0 max-sm:flex max-sm:w-full"
-              : "ml-auto mr-7 max-sm:hidden"
+              ? "top-16 z-10 gap-4 bg-opacity-80 p-4 max-md:absolute max-md:left-0 max-md:flex max-md:w-full"
+              : "mr-7 max-md:hidden"
           )}>
-          <li className={"text-base"}>About Me</li>
+          <li className={"whitespace-nowrap text-base"}>About Me</li>
           <li className={"text-base"}>Work</li>
           <li className={"text-base"}>Portfolio</li>
           <li className={"text-base"}>Contact</li>
-          <li className={"mr-0 sm:ml-auto"}>
-            <Button theme={"primary"} className={"max-sm:w-full"} type="button">
+          <li className={"mr-0 md:ml-auto"}>
+            <Button theme={"primary"} size="medium" className={"max-md:w-full"} type="button">
               Download CV
             </Button>
           </li>
         </ul>
-        <Menu as="div">
-          <div>
-            <MenuButton className={"flex items-center"}>
-              <HiMiniLanguage />
-              {locale}
-            </MenuButton>
-          </div>
-          <MenuItems className={"flex flex-col gap-4 bg-white"} anchor="bottom">
-            {locales.map(locale => (
-              <MenuItem key={locale}>
-                <button
-                  type="button"
-                  onClick={() => {
-                    changeLanguage(locale as "ko" | "de" | "en");
-                    // router.push(pathname, undefined, { locale });
-                  }}>
-                  {locale}
-                </button>
-              </MenuItem>
-            ))}
-          </MenuItems>
-        </Menu>
-
+        <div className="max-md:ml-auto max-md:mr-4">
+          <LangSwitcher />
+        </div>
         <button
           onClick={() => {
             onClickMenuHandler();
           }}
-          className={"sm:hidden"}
+          className={"md:hidden"}
           type={"button"}>
-          {isMenuOpen ? <IoClose className={"size-8"} /> : <LuMenu className={"size-8"} />}
+          {isMenuOpen ? <IoClose className={"size-8 text-pink-600"} /> : <LuMenu className={"size-8 text-pink-600"} />}
         </button>
       </div>
     </nav>
