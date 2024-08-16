@@ -10,6 +10,9 @@ const config: Config = {
       fontFamily: {
         pretendard: ["var(--font-pretendard)"],
       },
+      backgroundImage: {
+        profile: "url('../public/nahsooyeon.jpg')",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

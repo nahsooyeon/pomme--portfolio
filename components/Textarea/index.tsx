@@ -41,9 +41,9 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({ className, ma
       />
       <div
         className={cn(
-          "absolute inset-0 -z-10 rounded-[8px] border border-gray-500 bg-white",
-          "peer-hover:border-gray-600 peer-hover:bg-gray-200",
-          "peer-focus:border-blue-700 peer-focus:bg-white"
+          "absolute inset-0 -z-10 rounded-[8px] border border-pink-500 bg-white",
+          "peer-hover:border-pink-600 peer-hover:bg-gray-200",
+          "peer-focus:border-pink-700 peer-focus:bg-white"
         )}
       />
       <span className="absolute -bottom-5 right-0 text-[12px] text-gray-900">

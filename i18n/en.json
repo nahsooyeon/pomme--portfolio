@@ -1,4 +1,8 @@
 {
+  "about": {
+    "greet": "Hi, I'm Sooyeon 👋🏻",
+    "desc": "I am a front-end engineer skilled in web development with a focus on TypeScript and the Next.js framework. In the long term, I aspire to become a knowledgeable individual who can effectively drive business-relevant outcomes through communication and manage a product development team. While technical depth is important, I also aim to grow into an engineering manager or product owner who comprehensively understands and considers the company's structure, design, various development fields, and strategic situations."
+  },
   "contact": {
     "submit": "Submit"
   }
