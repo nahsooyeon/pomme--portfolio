@@ -5,8 +5,8 @@ const SpacingObject = Object.fromEntries(Array.from({ length: 328 }, (_, i) => [
 const config: Config = {
   content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
-    spacing: SpacingObject,
     extend: {
+      spacing: SpacingObject,
       fontFamily: {
         pretendard: ["var(--font-pretendard)"],
       },

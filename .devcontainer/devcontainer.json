@@ -15,9 +15,10 @@
       "settings": {
         "terminal.integrated.defaultProfile.linux": "zsh",
         "files.eol": "\n",
-        "files.autoSave": "afterDelay",
-        "javascript.format.enable": false,
-        "typescript.format.enable": false,
+        "files.autoSave": "onFocusChange",
+        "editor.formatOnSave": true,
+        "javascript.format.enable": true,
+        "typescript.format.enable": true,
         "typescript.suggest.paths": false,
         "javascript.suggest.paths": false,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -49,7 +50,8 @@
       "rangav.vscode-thunder-client",
       "Gruntfuggly.todo-tree",
       "eamodio.gitlens",
-      "ms-azuretools.vscode-docker"
+      "ms-azuretools.vscode-docker",
+      "prettier"
     ]
   }
 }
