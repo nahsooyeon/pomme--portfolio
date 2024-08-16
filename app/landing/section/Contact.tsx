@@ -4,6 +4,8 @@ import { FunctionComponent } from "react";
 import { useFormState } from "react-dom";
 import { useForm } from "react-hook-form";
 
+import { useTranslations } from "next-intl";
+
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import Textarea from "@/components/Textarea";
@@ -15,6 +17,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 const ContactSection: FunctionComponent = () => {
   const [state, formAction] = useFormState<State, FormData>(getContactInfo, null);
+
+  const t = useTranslations("contact");
+
   const { register, formState } = useForm<FormValues>({
     mode: "onBlur",
     resolver: zodResolver(formSchema),
@@ -41,7 +46,7 @@ const ContactSection: FunctionComponent = () => {
           isError={!!formState.errors.email}
         />
         <Textarea {...register("content")} placeholder="Message" />
-        <Button type="submit">Send</Button>
+        <Button type="submit">{t("submit")}</Button>
       </form>
     </section>
   );

@@ -1,8 +1,8 @@
 import { createClient } from "@/utils/supabase/server";
 
-import AboutSection from "./landing/section/About";
-import ContactSection from "./landing/section/Contact";
-import WorkSection from "./landing/section/Work";
+import AboutSection from "../landing/section/About";
+import ContactSection from "../landing/section/Contact";
+import WorkSection from "../landing/section/Work";
 
 export default async function Index() {
   const canInitSupabaseClient = () => {
