@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 const SpacingObject = Object.fromEntries(Array.from({ length: 328 }, (_, i) => [`${i}`, `${i * 4}px`]));
 
@@ -16,6 +17,7 @@ const config: Config = {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        primary: colors.pink,
         btn: {
           background: "hsl(var(--btn-background))",
           "background-hover": "hsl(var(--btn-background-hover))",

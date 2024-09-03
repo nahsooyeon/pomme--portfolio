@@ -11,7 +11,7 @@ const AboutSection: FunctionComponent = () => {
       <div className={"flex flex-col md:basis-1/2"}>
         <p>{t("greet")}</p>
         <h1 className={"text-xl font-extrabold"}>
-          <p className="text-pink-600">Communication-driven</p> Frontend Enginner
+          <p className="text-pink-600">Communication-driven</p> Frontend Engineer
         </h1>
         <p className={"text-gray-500"}>{t("desc")}</p>
         <div className={"mt-4 flex gap-5"}>
