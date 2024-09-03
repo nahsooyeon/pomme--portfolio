@@ -1,5 +1,17 @@
 {
+  "about": {
+    "greet": "Hallo, Ich bin Sooyeon 👋🏻",
+    "desc": "Ich bin ein Front-End-Entwickler, der sich auf Webentwicklung mit Schwerpunkt auf TypeScript und dem Next.js-Framework spezialisiert hat. Langfristig strebe ich danach, eine sachkundige Person zu werden, die durch Kommunikation geschäftlich relevante Ergebnisse effektiv vorantreiben und ein Produkt"
+  },
   "contact": {
     "submit": "Absenden"
+  },
+  "work": {
+    "Heyseller": "Heyseller",
+    "Heyseller_desc": "Heyseller ist ein halbautomatischer Produkt-Upload-Service für ausländische Einkaufsagenten. Es automatisiert das Hochladen und Verwalten von Produkten, sodass sich Verkäufer mehr auf den Verkauf ihrer Produkte konzentrieren können.",
+    "Coala": "Coala",
+    "Coala_desc": "Coala ist ein virtueller Vermögenswert-Community-Service. Ich habe den gesamten mobilen Webdienst entwickelt, einschließlich Funktionen wie das Anzeigen von Kryptowährungsinformationen nach Börse und Community-Funktionen.",
+    "RocketPunch": "RocketPunch",
+    "RocketPunch_desc": "RocketPunch ist eine Startup-Rekrutierungsplattform. Ich habe einen Premium-Abonnementdienst entwickelt, mit dem Benutzer die Unternehmen und Personen anzeigen können, die ihre Profile besucht haben."
   }
 }

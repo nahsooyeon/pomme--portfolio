@@ -5,5 +5,13 @@
   },
   "contact": {
     "submit": "Submit"
+  },
+  "work": {
+    "Heyseller": "Heyseller",
+    "Heyseller_desc": "Heyseller is a semi-automatic product upload service for overseas purchasing agents. It automates the uploading and management of products, allowing sellers to focus more on selling their products.",
+    "Coala": "Coala",
+    "Coala_desc": "Coala is a virtual asset community service. I developed the entire mobile web service, including functions such as viewing cryptocurrency information by exchange, and community features.",
+    "RocketPunch": "RocketPunch",
+    "RocketPunch_desc": "RocketPunch is a startup recruitment platform. I developed a premium subscription service that allows users to view the companies and people who visited their profiles."
   }
 }
