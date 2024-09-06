@@ -38,7 +38,7 @@ export default async function RootLayout({
   params: { locale },
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: { locale: string; };
 }) {
   const messages = await getMessages();
   return (
@@ -46,7 +46,7 @@ export default async function RootLayout({
       <body className="bg-background text-foreground">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <NavBar locale={locale} />
-          <main className="flex min-h-screen flex-col items-center max-sm:px-4 sm:px-20">{children}</main>
+          <main className="flex min-h-screen flex-col items-center [&_section]:max-sm:px-4 [&_section]:sm:px-20">{children}</main>
         </NextIntlClientProvider>
       </body>
     </html>

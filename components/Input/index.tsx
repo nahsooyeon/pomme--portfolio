@@ -25,7 +25,7 @@ const InputVariants = cva(`group relative flex flex-1 items-center justify-betwe
 
 interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "prefix" | "size">,
-    VariantProps<typeof InputVariants> {
+  VariantProps<typeof InputVariants> {
   label?: React.ReactNode;
   hint?: React.ReactNode;
   prefix?: React.ReactNode;
@@ -68,9 +68,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           {label && (
             <div
               className={cn(
-                "flex h-[18px] w-25 shrink-0 items-center text-[14px]",
+                "flex h-[18px] w-25 shrink-0 items-center text-[14px] text-primary-800",
                 layout === "vertical" && "ml-[2px]",
-                props.disabled && "text-gray-900"
+                props.disabled && "text-gray-500"
               )}>
               {label}
             </div>
@@ -85,7 +85,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               data-error={isError}
               className={cn(
                 InputVariants({ size }),
-                "peer w-full appearance-none bg-transparent text-[14px] placeholder:text-gray-900 disabled:text-gray-600"
+                "peer w-full appearance-none bg-transparent text-[14px] placeholder:text-gray-400 disabled:text-gray-600"
               )}
               onInput={handleOnlyNumber}
               {...props}
@@ -114,12 +114,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               className={cn(
                 InputVariants({ size }),
                 "absolute inset-0 -z-10 rounded-[6px] border border-pink-500 bg-white",
-                "group-hover:border-pink-600 group-hover:bg-gray-200 peer-focus:bg-white", // Default
+                "group-hover:border-pink-600 ", // Default
+                "peer-focus:bg-white peer-focus:outline peer-focus:outline-[2.5px] peer-focus:outline-primary-400",
                 "peer-read-only:border-none peer-read-only:bg-transparent", // Read Only
                 "group-hover:peer-data-[error=false]:border-pink-600", // No Error
-                "peer-data-[error=true]:border-red-500 group-hover:peer-data-[error=true]:border-red-500 group-hover:peer-data-[error=true]:bg-red-100", // Error
-                "group-hover:peer-focus:peer-data-[error=false]:border-blue-700", // Focus Input border blue
-                "peer-disabled:border-gray-400 peer-disabled:bg-gray-200 peer-disabled:text-gray-600 peer-disabled:group-hover:peer-data-[error=true]:bg-gray-200"
+                "peer-data-[error=true]:border-red-500 group-hover:peer-data-[error=true]:border-red-500 group-hover:peer-data-[error=true]:bg-red-100", // Error                "peer-disabled:border-gray-400 peer-disabled:bg-gray-200 peer-disabled:text-gray-600 peer-disabled:group-hover:peer-data-[error=true]:bg-gray-200"
               )}
             />
           </div>

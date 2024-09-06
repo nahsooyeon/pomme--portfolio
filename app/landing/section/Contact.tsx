@@ -27,26 +27,26 @@ const ContactSection: FunctionComponent = () => {
   });
 
   return (
-    <section>
-      <form action={formAction} className={"flex flex-col"}>
+    <section className={"flex w-full"}>
+      <form action={formAction} className={"flex w-1/2 flex-col gap-4"}>
         <Input
           {...register("name")}
           hint={formState.errors.name?.message}
-          label="name"
+          label={t("name")}
           type="text"
-          placeholder="Name"
+          placeholder={t("name_placeholder")}
           isError={!!formState.errors.name}
         />
         <Input
           {...register("email")}
           hint={formState.errors.email?.message}
-          label="email"
+          label={t("email")}
           type="email"
-          placeholder="Email"
+          placeholder={t("email_placeholder")}
           isError={!!formState.errors.email}
         />
-        <Textarea {...register("content")} placeholder="Message" />
-        <Button type="submit">{t("submit")}</Button>
+        <Textarea label={t("message")} {...register("content")} placeholder={t("message_placeholder")} />
+        <Button className={"w-full"} type="submit">{t("submit")}</Button>
       </form>
     </section>
   );

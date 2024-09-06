@@ -31,7 +31,7 @@ const ButtonStyle = cva(
 );
 interface ButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color" | "prefix" | "suffix">,
-    VariantProps<typeof ButtonStyle> {
+  VariantProps<typeof ButtonStyle> {
   underline?: boolean;
   onlyStyle?: boolean;
   loading?: boolean;
@@ -74,7 +74,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         className={cn(
-          "inline-flex w-max flex-1 flex-nowrap items-center justify-center",
+          "inline-flex flex-1 flex-nowrap items-center justify-center",
           ButtonStyle({
             size,
             theme,

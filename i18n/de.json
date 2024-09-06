@@ -1,10 +1,24 @@
 {
+  "greet": {
+    "hello": "Hallo!",
+    "Sooyeon": "Sooyeon",
+    "iam": "Ich bin",
+    "frontend_engineer": "Front-End-Entwickler.",
+    "growing_developer": "Wachsender Entwickler.",
+    "meditation_developer": "Meditierender Entwickler."
+  },
   "about": {
     "greet": "Hallo, Ich bin Sooyeon 👋🏻",
     "desc": "Ich bin ein Front-End-Entwickler, der sich auf Webentwicklung mit Schwerpunkt auf TypeScript und dem Next.js-Framework spezialisiert hat. Langfristig strebe ich danach, eine sachkundige Person zu werden, die durch Kommunikation geschäftlich relevante Ergebnisse effektiv vorantreiben und ein Produkt"
   },
   "contact": {
-    "submit": "Absenden"
+    "submit": "Nachricht senden",
+    "name": "Name",
+    "name_placeholder": "Geben Sie Ihren Namen ein",
+    "email": "E-Mail",
+    "email_placeholder": "Geben Sie Ihre E-Mail-Adresse ein",
+    "message": "Nachricht",
+    "message_placeholder": "Lass uns über..."
   },
   "work": {
     "Heyseller": "Heyseller",
