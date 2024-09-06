@@ -1,10 +1,24 @@
 {
+  "greet": {
+    "hello": "안녕하세요!",
+    "iam": "저는",
+    "Sooyeon": "수연입니다.",
+    "frontend_engineer": "프론트엔드 엔지니어입니다.",
+    "growing_developer": "성장하는 개발자입니다.",
+    "meditation_developer": "명상하는 개발자입니다."
+  },
   "about": {
     "greet": "안녕하세요, 수연입니다! 👋🏻",
     "desc": "Typescript 및 Next.js 프레임워크를 중심으로 웹 개발이 가능한 프론트엔드 엔지니어입니다. 장기적으로는 커뮤니케이션을 통해 비지니스에 필요한 결과물을 잘 이끌어낼 수 있고 제품 개발 팀을 운영할 수 있을 정도로 다양한 기술과 상황에 해박한 사람이 되고싶습니다. 기술적인 깊이도 중요하지만, 회사나 비지니스의 구조, 디자인, 여러 개발 분야, 상황 전략을 폭넓게 이해하고 고려하는 엔지니어링 매니저나 프로덕트 오너로 성장하고 싶습니다."
   },
   "contact": {
-    "submit": "전송"
+    "submit": "메세지 보내기",
+    "name": "이름",
+    "name_placeholder": "이름을 입력해주세요",
+    "email": "이메일",
+    "email_placeholder": "이메일을 입력해주세요",
+    "message": "메시지",
+    "message_placeholder": "저와 어떤 이야기를 하고 싶으신가요?"
   },
   "work": {
     "Heyseller": "헤이셀러",

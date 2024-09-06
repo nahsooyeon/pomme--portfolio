@@ -24,10 +24,10 @@ const NavBar: FunctionComponent<NavBarProps> = props => {
   };
 
   return (
-    <nav className="z-10 flex h-16 w-full flex-1 justify-center border-b border-b-pink-300 bg-white max-sm:fixed max-sm:px-4 sm:px-20">
+    <nav className="fixed inset-x-0 top-0 z-10 flex h-16  w-full flex-1 justify-center border-b border-b-pink-300 bg-white max-sm:fixed max-sm:px-4 sm:px-20">
       <div className="relative flex w-full flex-1 items-center text-sm">
         <h1>
-          <Link href="/" className={"text-nowrap text-2xl font-extrabold text-pink-600 max-md:text-lg"}>
+          <Link href="/" className={"flex items-center text-nowrap text-2xl font-extrabold text-pink-600 max-md:text-lg"}>
             &#60;devPomme🍎 /&#62;
           </Link>
         </h1>
@@ -43,11 +43,11 @@ const NavBar: FunctionComponent<NavBarProps> = props => {
           <li className={"text-base"}>Work</li>
           <li className={"text-base"}>Portfolio</li>
           <li className={"text-base"}>Contact</li>
-          <li className={"mr-0 md:ml-auto"}>
+          {/*  <li className={"mr-0 md:ml-auto"}>
             <Button theme={"primary"} size="medium" className={"max-md:w-full"} type="button">
               Download CV
             </Button>
-          </li>
+          </li> */}
         </ul>
         <div className="max-md:ml-auto max-md:mr-4">
           <LangSwitcher />

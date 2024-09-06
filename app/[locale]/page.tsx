@@ -2,6 +2,7 @@ import { createClient } from "@/utils/supabase/server";
 
 import AboutSection from "../landing/section/About";
 import ContactSection from "../landing/section/Contact";
+import GreetSection from "../landing/section/Greet";
 import WorkSection from "../landing/section/Work";
 
 export default async function Index() {
@@ -29,6 +30,7 @@ export default async function Index() {
 
       <div className="flex w-full flex-1 flex-col gap-20">
         <main className="flex flex-1 flex-col gap-6">
+          <GreetSection />
           <AboutSection />
           <WorkSection />
           <ContactSection />
