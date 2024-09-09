@@ -141,5 +141,5 @@ body {
 }
 
 h1 {
-  @apply font-bold md:text-3xl lg:text-4xl;
+  @apply text-3xl font-bold lg:text-4xl;
 }

@@ -20,7 +20,7 @@ const LangSwitcher: FunctionComponent = () => {
 
   const changeLanguage = (newLocale: "ko" | "de" | "en") => {
     const nextLocale = newLocale;
-    const params: { [anyProp: string]: string } = {};
+    const params: { [anyProp: string]: string; } = {};
     searchParams.forEach((value, key) => {
       params[key] = value;
     });
@@ -34,7 +34,7 @@ const LangSwitcher: FunctionComponent = () => {
   return (
     <Menu as="div">
       <div>
-        <MenuButton className={"flex items-center text-gray-500 hover:text-pink-400"}>
+        <MenuButton className={"flex items-center text-gray-500 hover:text-primary-400"}>
           <HiMiniLanguage className={"text-xl"} />
           <span className={"text-lg"}>{locale.toUpperCase()}</span>
         </MenuButton>
@@ -49,7 +49,7 @@ const LangSwitcher: FunctionComponent = () => {
           <MenuItem key={locale}>
             <button
               type="button"
-              className="text-center text-gray-500 hover:text-pink-500"
+              className="text-center text-gray-500 hover:text-primary-500"
               onClick={() => {
                 changeLanguage(locale as "ko" | "de" | "en");
                 // router.push(pathname, undefined, { locale });

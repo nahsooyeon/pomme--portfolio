@@ -24,10 +24,10 @@ const NavBar: FunctionComponent<NavBarProps> = props => {
   };
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-10 flex h-16  w-full flex-1 justify-center border-b border-b-pink-300 bg-white max-sm:fixed max-sm:px-4 sm:px-20">
+    <nav className="fixed inset-x-0 top-0 z-10 flex h-16  w-full flex-1 justify-center border-b border-b-primary-300 bg-white max-sm:fixed max-sm:px-4 sm:px-20">
       <div className="relative flex w-full flex-1 items-center text-sm">
         <h1>
-          <Link href="/" className={"flex items-center text-nowrap text-2xl font-extrabold text-pink-600 max-md:text-lg"}>
+          <Link href="/" className={"flex items-center text-nowrap text-2xl font-extrabold text-primary-600 max-md:text-lg"}>
             &#60;devPomme🍎 /&#62;
           </Link>
         </h1>
@@ -58,7 +58,7 @@ const NavBar: FunctionComponent<NavBarProps> = props => {
           }}
           className={"md:hidden"}
           type={"button"}>
-          {isMenuOpen ? <IoClose className={"size-8 text-pink-600"} /> : <LuMenu className={"size-8 text-pink-600"} />}
+          {isMenuOpen ? <IoClose className={"size-8 text-primary-600"} /> : <LuMenu className={"size-8 text-primary-600"} />}
         </button>
       </div>
     </nav>
