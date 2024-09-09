@@ -12,14 +12,14 @@ import { motion } from "framer-motion";
 const GreetSection: FunctionComponent = () => {
   const t = useTranslations("greet");
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-24">
       <div className="grid grid-cols-1 sm:grid-cols-12">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           className="col-span-8 place-self-center justify-self-start text-center sm:text-left">
-          <h1 className="mb-4 text-4xl font-extrabold text-pink-700 sm:text-5xl sm:leading-normal lg:text-7xl lg:leading-snug">
+          <h1 className="mb-4 text-3xl font-extrabold text-primary-900 sm:text-4xl lg:text-6xl">
             <span className="bg-gradient-to-r from-primary-600 to-primary-200 bg-clip-text text-transparent">
               {t("hello")} {t("iam")}{" "}
             </span>

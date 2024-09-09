@@ -18,9 +18,9 @@ const ButtonStyle = cva(
         large: "rounded-lg max-sm:p-2.5 max-sm:text-base sm:p-3 sm:text-lg",
       },
       theme: {
-        primary: "bg-pink-300 text-white hover:bg-pink-500",
-        secondary: "bg-pink-500 text-white ",
-        tertiary: "bg-pink-200 text-pink-800",
+        primary: "bg-primary-300 text-white hover:bg-primary-500",
+        secondary: "bg-primary-500 text-white ",
+        tertiary: "bg-primary-200 text-primary-800",
       },
     },
     defaultVariants: {
