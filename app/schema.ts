@@ -2,12 +2,8 @@ import { z } from "zod";
 
 export const NAME_REGEX = /^[가-힣a-zA-Z]{2,10}$/;
 
-export const nameSchema = () => {
-  return z
-    .string()
-    .min(5, { message: "이름은 5~10자리 입니다." })
-    .max(10, { message: "이름은 5~10자리 입니다." })
-    .regex(NAME_REGEX, { message: "이름은 영문 및 한글만 가능합니다." });
+export const subjectSchema = () => {
+  return z.string().min(5, { message: "제목은 5~20자리 입니다." }).max(20, { message: "제목은 5~20자리 입니다." });
 };
 
 export const emailSchema = () => {
@@ -19,7 +15,7 @@ export const contentSchema = () => {
 };
 
 export const formSchema = z.object({
-  name: nameSchema(),
+  subject: subjectSchema(),
   email: emailSchema(),
   content: contentSchema(),
 });

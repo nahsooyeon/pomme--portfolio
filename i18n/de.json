@@ -13,8 +13,8 @@
   },
   "contact": {
     "submit": "Nachricht senden",
-    "name": "Name",
-    "name_placeholder": "Geben Sie Ihren Namen ein",
+    "subject": "Betreff",
+    "subject_placeholder": "Geben Sie den Betreff ein",
     "email": "E-Mail",
     "email_placeholder": "Geben Sie Ihre E-Mail-Adresse ein",
     "message": "Nachricht",

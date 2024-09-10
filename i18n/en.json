@@ -13,8 +13,8 @@
   },
   "contact": {
     "submit": "Send Message",
-    "name": "Name",
-    "name_placeholder": "Enter your name",
+    "subject": "Subject",
+    "subject_placeholder": "Enter subject",
     "email": "Email",
     "email_placeholder": "Enter your email",
     "message_placeholder": "Let's talk about...",

@@ -10,22 +10,41 @@ import Button from "@/components/Button";
 import Input from "@/components/Input";
 import Textarea from "@/components/Textarea";
 
-import { State, getContactInfo } from "@/app/actions";
 import { FormValues, formSchema } from "@/app/schema";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
 
 const ContactSection: FunctionComponent = () => {
-  const [state, formAction] = useFormState<State, FormData>(getContactInfo, null);
 
   const t = useTranslations("contact");
 
-  const { register, formState } = useForm<FormValues>({
+  const { register, formState, handleSubmit, reset } = useForm<FormValues>({
     mode: "onBlur",
     resolver: zodResolver(formSchema),
     defaultValues: {},
   });
+
+  const onSubmit = async (data: FormValues) => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        reset();
+        alert("Message sent successfully");
+      } else {
+        alert("Message failed to send");
+      }
+    } catch (error) {
+      alert("Message failed to send");
+    }
+  };
 
   return (
     <section className={"flex w-full flex-col justify-between sm:flex-row"}>
@@ -47,14 +66,14 @@ const ContactSection: FunctionComponent = () => {
           </Link>
         </div>
       </div>
-      <form action={formAction} className={"flex w-full flex-1 flex-col gap-4 sm:w-1/2"}>
+      <form onSubmit={handleSubmit(onSubmit)} className={"flex w-full flex-1 flex-col gap-4 sm:w-1/2"}>
         <Input
-          {...register("name")}
-          hint={formState.errors.name?.message}
-          label={t("name")}
+          {...register("subject")}
+          hint={formState.errors.subject?.message}
+          label={t("subject")}
           type="text"
-          placeholder={t("name_placeholder")}
-          isError={!!formState.errors.name}
+          placeholder={t("subject_placeholder")}
+          isError={!!formState.errors.subject}
         />
         <Input
           {...register("email")}
