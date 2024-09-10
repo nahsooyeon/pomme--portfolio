@@ -13,8 +13,8 @@
   },
   "contact": {
     "submit": "메세지 보내기",
-    "name": "이름",
-    "name_placeholder": "이름을 입력해주세요",
+    "subject": "제목",
+    "subject_placeholder": "제목을 입력해주세요",
     "email": "이메일",
     "email_placeholder": "이메일을 입력해주세요",
     "message": "메시지",
