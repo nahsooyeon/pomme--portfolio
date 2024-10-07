@@ -1,0 +1,31 @@
+{
+  "greet": {
+    "hello": "Hello!",
+    "iam": "I'm",
+    "Sooyeon": "Sooyeon",
+    "frontend_engineer": "Front-end Engineer.",
+    "growing_developer": "Growing Developer.",
+    "meditation_developer": "Meditating Developer."
+  },
+  "about": {
+    "greet": "Hi, I'm Sooyeon 👋🏻",
+    "desc": "I am a front-end engineer skilled in web development with a focus on TypeScript and the Next.js framework. In the long term, I aspire to become a knowledgeable individual who can effectively drive business-relevant outcomes through communication and manage a product development team. While technical depth is important, I also aim to grow into an engineering manager or product owner who comprehensively understands and considers the company's structure, design, various development fields, and strategic situations."
+  },
+  "contact": {
+    "submit": "Send Message",
+    "subject": "Subject",
+    "subject_placeholder": "Enter subject",
+    "email": "Email",
+    "email_placeholder": "Enter your email",
+    "message_placeholder": "Let's talk about...",
+    "message": "Message"
+  },
+  "work": {
+    "Heyseller": "Heyseller",
+    "Heyseller_desc": "Heyseller is a semi-automatic product upload service for overseas purchasing agents. It automates the uploading and management of products, allowing sellers to focus more on selling their products.",
+    "Coala": "Coala",
+    "Coala_desc": "Coala is a virtual asset community service. I developed the entire mobile web service, including functions such as viewing cryptocurrency information by exchange, and community features.",
+    "RocketPunch": "RocketPunch",
+    "RocketPunch_desc": "RocketPunch is a startup recruitment platform. I developed a premium subscription service that allows users to view the companies and people who visited their profiles."
+  }
+}
