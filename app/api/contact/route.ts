@@ -5,14 +5,14 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
 export async function POST(req: Request) {
   try {
-    const { email, subject, message } = await req.json();
+    const { email, subject, content } = await req.json();
 
-    if (!email || !subject || !message) {
+    if (!email || !subject || !content) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
 
     // Resend API를 통해 이메일 발송
-    const response = await fetch("https://api.resend.com/v1/emails", {
+    const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${RESEND_API_KEY}`,
@@ -20,11 +20,13 @@ export async function POST(req: Request) {
       },
       body: JSON.stringify({
         from: email,
-        to: "owner.pomme.dev",
+        to: "owner@pomme.dev",
         subject: subject,
-        text: message,
+        html: content,
       }),
     });
+
+    console.log(response);
 
     if (!response.ok) {
       const error = await response.json();
@@ -33,6 +35,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ message: "Email sent successfully" }, { status: 200 });
   } catch (error) {
+    console.error(error);
     return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
   }
 }
